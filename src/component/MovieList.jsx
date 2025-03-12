@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from 'react'
 import { useStore } from '../storeMovie';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 function MovieList() {
     const { fetchData } = useStore();
@@ -17,20 +18,29 @@ function MovieList() {
         dataMore(state.t1, state.t2, pageCount)
     },[pageCount])
 
+    function searchData(keyword){
+        axios.get(`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=f89a6c1f22aca3858a4ae7aef10de967`)
+        .then((res)=>{
+            setList(res.data.results);
+        })
+    }
+
   return (
     <>
         <h2 className='pageTitle'>Movies</h2>
         <div className='searchBox'>
-            <div className='inputWrapper'>
-                <input type='text' placeholder='Enter Keyword...'></input>
-            </div>
-            <button>Search</button>
+            <form onSubmit={(e)=>{e.preventDefault(); searchData(e.target.keyword.value)}}>
+                <div className='inputWrapper'>
+                    <input type='text' name="keyword" placeholder='Enter Keyword...'></input>
+                </div>
+                <button>Search</button>
+            </form>
         </div>
         <div className='tvBox'>
             {
                 list?.map((item) =>
-                    <a href="#" key={item.id}>
-                        <div className='imgTv'
+                    <NavLink to={`/detail/${item.id}`} key={item.id}>                    
+                        <div  className='imgTv'
                             style={{
                                 backgroundImage: `url('https://image.tmdb.org/t/p/w200${item.poster_path}')`,
                                 backgroundSize: 'cover',
@@ -42,7 +52,7 @@ function MovieList() {
                             <h3>{item.title}</h3>
                             <span><b>★</b> {item.vote_average}</span>
                         </div>
-                    </a>
+                    </NavLink>
                 )
             }
         </div>
