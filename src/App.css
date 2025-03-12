@@ -1,0 +1,207 @@
+*{box-sizing: border-box;}
+a{text-decoration: none; color: white;}
+h2{margin: 0;}
+
+header{
+  padding: 30px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  position: fixed;
+  z-index: 99999;
+  left: 0; top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.4s ease-in-out;
+}
+header.scrolled{
+  background-color: black;
+  padding: 15px 150px;
+}
+header > div > a{
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: bold;
+  color: white;
+}
+header > div > a.active,
+header > div > a:hover{
+  padding-bottom: 5px;
+  border-bottom: 2px solid red;
+}
+header > div > a:hover{color: red;}
+
+body{
+  background-color: black;
+  color: white;
+}
+
+footer{
+  text-align: center;
+  margin-bottom: 90px;
+}
+footer > h2{
+  font-size: 28px;
+}
+.footerBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 90px;
+}
+.footerMenu a{
+  display: block;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.footerMenu a:hover{
+  color: red;
+}
+
+.mainBox{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  gap: 90px;
+  padding: 0 150px;
+}
+.mainBox > p > img{
+  border-radius: 20px;
+}
+.text{width: 55%;}
+.text > h3{font-size: 80px; margin: 0;}
+.text > p{margin: 35px 0;}
+.text button{
+  margin-right: 15px;
+  padding: 20px 30px;
+  border-color: white;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+.text button.active, .text button:hover,
+.moreBtn:hover{
+  border-color: red;
+  background-color: red;
+  cursor: pointer;
+}
+
+.mainList{
+  margin: 100px 50px;
+}
+.mainList .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.mainList .swiper{
+  margin-bottom: 50px;
+}
+.mainList .swiper-slide {
+  width: 15%;
+}
+.mainListCon img{
+  width: 100%; 
+  border-radius: 25px;
+}
+
+.pageTitle{
+  text-align: center;
+  margin: 150px 0 0;
+}
+.searchBox{
+  margin: 20px 150px;
+}
+.searchBox .inputWrapper{
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+}
+.searchBox input{
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: white;
+  padding: 12px;
+}
+.searchBox input:focus{outline: none;}
+/* 자식 요소에 따라 부모 스타일 변경하고 싶을 때: focus-within*/
+.searchBox input:focus-within{
+  border-bottom: 2px solid red;
+}
+.searchBox .inputWrapper:not(:focus-within) {
+  border-bottom: 1px solid rgba(211, 211, 211, 0.5);
+}
+.searchBox button{
+  padding: 12px 30px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.tvBox{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  row-gap: 25px;
+  column-gap: 20px;
+  margin: 50px 150px;
+}
+.tvBox .imgTv{
+  padding-top: 180%;
+  border-radius: 20px;
+  position: relative;
+}
+.mainListCon{
+  position: relative;
+}
+.tvBox .imgTv::before,
+.mainListCon::before{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: 0.4s;
+}
+.btn{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 30px 15px;
+  border-radius: 15px;
+  background-color: red;
+  display: none;
+  transition: 0.4s;
+}
+.tvBox > a:hover .textTv h3{color: red;}
+.tvBox > a:hover .btn{display: block;}
+.tvBox > a:hover .imgTv::before{opacity: 0.6;}
+.mainListLink:hover h3{color: red;}
+.mainListLink:hover .btn{display: block;}
+.mainListLink:hover .mainListCon::before{opacity: 0.6;}
+
+.textTv{
+  width: 200px;
+}
+.textTv b{color: red;}
+
+.moreBtn{
+  display: block;
+  margin: 0 auto 90px;
+  padding: 10px 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
