@@ -71,7 +71,7 @@ footer > h2{
   border-radius: 20px;
 }
 .text{width: 55%;}
-.text > h3{font-size: 80px; margin: 0;}
+.text > h3{font-size: 70px; margin: 0;}
 .text > p{margin: 35px 0;}
 .text button{
   margin-right: 15px;
@@ -203,5 +203,55 @@ footer > h2{
   color: white;
   font-weight: bold;
   font-size: 20px;
+}
+
+
+
+
+/* --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-------------------------------------------------------------------------------- */
+@media (max-width: 1200px){
+  header{
+    font-size: 1.5rem;
+    padding: 30px 120px;
+  }
+  header.scrolled{
+    padding: 15px 120px;
+  }
+  .mainBox{
+    gap: 50px;
+    padding: 0 120px;
+  }
+  .mainBox > p{
+    width: 80%;
+  }
+  .mainBox > p > img{
+    width: 100%;
+  }
+  .text{width: 60%;}
+  .text > h3{font-size: 3rem; margin: 0;}
+  .text > p{margin: 30px 0;}
+  .text button{
+    margin-right: 10px;
+    padding: 15px 25px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  .tvBox{
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin: 50px 120px;
+  }
+  .tvBox .imgTv{
+    padding-top: 180%;
+    border-radius: 20px;
+    position: relative;
+  }
 }
 

@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStore } from '../storeMovie';
 import { NavLink, useLocation } from 'react-router-dom';
 import axios from 'axios';
@@ -40,7 +40,7 @@ function MovieList() {
             {
                 list?.map((item) =>
                     <NavLink to={`/detail/${item.id}`} key={item.id}>                    
-                        <div  className='imgTv'
+                        <div className='imgTv'
                             style={{
                                 backgroundImage: `url('https://image.tmdb.org/t/p/w200${item.poster_path}')`,
                                 backgroundSize: 'cover',
