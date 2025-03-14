@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../storeMovie';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
 import MainItem from './MainItem';

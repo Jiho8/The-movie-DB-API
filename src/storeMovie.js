@@ -39,18 +39,9 @@ export const useStore = create((set) => ({
     },
 
     // 서버 data 받기 -> 서브 페이지에서 사용
-    fetchData: async (t1, t2, pageNum, query) => {
+    fetchData: async (t1, t2, pageNum) => {
         let res;
-        if(query) {
-            res = await instance.get(`/${t1}/${t2}`, {
-                params: {
-                    page: pageNum,
-                    query: query
-                }
-            });
-        } else {
-            res = await instance.get(`/${t1}/${t2}`, { params: { page: pageNum } });
-        }
+        res = await instance.get(`/${t1}/${t2}`, { params: { page: pageNum } });
         return res.data.results;
     }
 }));

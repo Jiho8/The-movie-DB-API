@@ -10,11 +10,14 @@ function Detail() {
   useEffect(()=>{
     axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=f89a6c1f22aca3858a4ae7aef10de967&append_to_response=videos,images,casts`)
     .then((res)=>{
-        console.log(res.data)
+      return res.data;
     })
   })
+  
   return (
-    <div>Detail</div>
+    <>
+      
+    </>
   )
 }
 
